@@ -9,6 +9,7 @@
       S3_BUCKET_NAME: bucket-name-with-all-images
       AWS_ACCESS_KEY_ID: lskdjflskjdf
       AWS_SECRET_ACCESS_KEY: lskdjflsdkjflskjdflksjdflsjdlfjs
+      AWS_REGION: us-east-1
     ```
   
 * run ```rake pictures:import``` to download and process them
