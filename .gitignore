@@ -5,6 +5,7 @@
 #   git config --global core.excludesfile '~/.gitignore_global'
 
 # Ignore bundler config.
+app/assets/images.zip
 /.bundle
 /.rvm
 config/application.yml
