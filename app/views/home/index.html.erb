@@ -3,7 +3,7 @@
   </head>
   <body>
     <div class="jumbotron text-center">
-      <h1>Picture Gallery</h1>
+      <h1><%= ENV["TITLE"] || "Picture Gallery" %></h1>
     </div>
     <div id="pictures" class="text-center container">
       <% @pics.keys.sort.each do |k| %>
