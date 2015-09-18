@@ -29,6 +29,7 @@
       AWS_SECRET_ACCESS_KEY: lskdjflsdkjflskjdflksjdflsjdlfjs
       AWS_REGION: us-east-1
       TITLE: my vacation gallery
+      SITE_PASSWORD: some-pass    # username/password both, to lock site
     ```
   
 * run ```rake pictures:import``` to download and process them
