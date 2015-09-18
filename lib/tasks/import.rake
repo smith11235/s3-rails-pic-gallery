@@ -46,7 +46,7 @@ namespace :pictures do
     pull_new_files
 
     # generate zip file
-    generate_zip compress_dir, Rails.root.join('app', 'assets', 'images.zip')
+    generate_zip compress_dir, Rails.root.join('public', 'all-images.zip')
 
     # done!
     puts "All done!"

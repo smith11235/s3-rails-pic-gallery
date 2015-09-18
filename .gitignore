@@ -6,6 +6,7 @@
 
 # Ignore bundler config.
 app/assets/images.zip
+public/all-images.zip
 /.bundle
 /.rvm
 config/application.yml

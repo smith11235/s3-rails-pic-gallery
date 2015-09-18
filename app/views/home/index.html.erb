@@ -4,6 +4,9 @@
   <body>
     <div class="jumbotron text-center">
       <h1><%= ENV["TITLE"] || "Picture Gallery" %></h1>
+      <p>
+        <%= link_to "Download ALL Pictures", "all-images.zip" %>
+      </p>
     </div>
     <div id="pictures" class="text-center container">
       <% @pics.keys.sort.each do |k| %>

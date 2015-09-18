@@ -34,3 +34,13 @@
   
 * run ```rake pictures:import``` to download and process them
 * run ```rails server```
+
+## TODO
+* download zip link
+* upload form for new pics
+  * https://devcenter.heroku.com/articles/direct-to-s3-image-uploads-in-
+* password protect upload form separate from rest of site
+  * ENV["UPLOAD_PASSWORD"]
+* cloudformation template for bucket creation
+  * parameter being the bucket name
+                     
