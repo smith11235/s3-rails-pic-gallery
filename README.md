@@ -4,6 +4,24 @@
 * install ruby/rails & bundle install
 * Rmagick requires some extra libraries: 
   * ```sudo apt-get install imagemagick libmagickwand-dev```
+* create s3 bukcet
+  * make it a static website
+  * add policy
+    * ```
+       {
+         "Version":"2012-10-17",
+         "Statement":[{
+         "Sid":"PublicReadGetObject",
+               "Effect":"Allow",
+           "Principal": "*",
+             "Action":["s3:GetObject"],
+             "Resource":["arn:aws:s3:::example-bucket/*"
+             ]
+           }
+         ]
+       }
+      ```
+
 * set config/application.yml with 
   * ```
       S3_BUCKET_NAME: bucket-name-with-all-images

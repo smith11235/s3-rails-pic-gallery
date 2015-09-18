@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get '/:pic_name', to: 'home#show'
+  get '/:pic_name', to: 'home#show', as: :show_picture
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

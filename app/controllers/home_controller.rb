@@ -11,6 +11,14 @@ class HomeController < ApplicationController
   end
 
   def show
-    @pic = File.join('compressed', "#{params[:pic_name]}.#{params[:format]}")
+    # TODO: s3 directly: 
+    @quality = params[:quality] || "compressed"
+    @pic_name = params[:pic_name]
+    @format = params[:format]
+    @pic = if @quality == "compressed"
+             File.join('compressed', "#{@pic_name}.#{@format}")
+           else
+             s3_url_for("#{@pic_name}.#{@format}")
+           end
   end
 end

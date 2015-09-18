@@ -13,6 +13,15 @@
     </style>
   </head>
   <body>
+    <% if @quality == "compressed" %>
+      Viewing Compressed Image, 
+      <%= link_to "See Full Quality Here", show_picture_path(pic_name: @pic_name, format: @format, quality: "full") %>
+    <% else %>
+      Viewing Full Quality Image, 
+      <%= link_to "See Compressed Here", show_picture_path(pic_name: @pic_name, format: @format) %>
+    <% end %>
+    
+    <hr>
     <%= image_tag(@pic) %>
   </body>
 </html>
