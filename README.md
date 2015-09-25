@@ -6,6 +6,7 @@
   * ```sudo apt-get install imagemagick libmagickwand-dev```
 * create s3 bukcet
   * make it a static website
+  * name: "example.com-pictures"
   * add policy
     * ```
        {
@@ -15,12 +16,25 @@
                "Effect":"Allow",
            "Principal": "*",
              "Action":["s3:GetObject"],
-             "Resource":["arn:aws:s3:::example-bucket/*"
+             "Resource":["arn:aws:s3:::www.example.com-pictures/*"
              ]
            }
          ]
        }
       ```
+   * add cors config
+     * ```
+      <?xml version="1.0" encoding="UTF-8"?>
+      <CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+        <CORSRule>
+          <AllowedOrigin>www.example.com</AllowedOrigin>
+          <AllowedMethod>GET</AllowedMethod>
+          <AllowedMethod>POST</AllowedMethod>
+          <AllowedMethod>PUT</AllowedMethod>
+          <AllowedHeader>*</AllowedHeader>
+        </CORSRule>
+      </CORSConfiguration>
+       ```
 
 * set config/application.yml with 
   * ```
@@ -36,9 +50,9 @@
 * run ```rails server```
 
 ## TODO
-* download zip link
 * upload form for new pics
   * https://devcenter.heroku.com/articles/direct-to-s3-image-uploads-in-
+
 * password protect upload form separate from rest of site
   * ENV["UPLOAD_PASSWORD"]
 * cloudformation template for bucket creation
